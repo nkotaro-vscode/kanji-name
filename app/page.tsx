@@ -1,4 +1,7 @@
+import { AdSlot } from "@/components/AdSlot";
 import { NameForm } from "@/components/NameForm";
+import { SeoContent } from "@/components/SeoContent";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export default function Home() {
   return (
@@ -16,8 +19,7 @@ export default function Home() {
       </div>
 
       <div className="relative z-10 flex flex-col items-center px-6 py-16 md:py-24">
-        {/* Header */}
-        <header className="text-center mb-16 max-w-xl">
+        <header className="text-center mb-10 max-w-xl">
           <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">
             漢字 Name
           </p>
@@ -31,12 +33,13 @@ export default function Home() {
           </p>
         </header>
 
+        <AdSlot slot="header" className="mb-12" />
+
         <NameForm />
 
-        {/* Footer */}
-        <footer className="mt-24 text-center text-paper-muted/50 text-sm">
-          <p>Crafted with reverence for the art of kanji</p>
-        </footer>
+        <SeoContent />
+
+        <SiteFooter />
       </div>
     </main>
   );

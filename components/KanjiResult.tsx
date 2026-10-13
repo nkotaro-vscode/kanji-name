@@ -1,3 +1,5 @@
+import { AdSlot } from "@/components/AdSlot";
+import { MerchOffer } from "@/components/MerchOffer";
 import type { KanjiSuggestion } from "@/lib/types";
 
 interface KanjiResultProps {
@@ -6,6 +8,8 @@ interface KanjiResultProps {
 }
 
 export function KanjiResult({ name, suggestions }: KanjiResultProps) {
+  const primary = suggestions[0];
+
   return (
     <div className="space-y-8 animate-fade-in-up">
       <div className="text-center">
@@ -54,6 +58,12 @@ export function KanjiResult({ name, suggestions }: KanjiResultProps) {
           </article>
         ))}
       </div>
+
+      {primary && (
+        <MerchOffer kanji={primary.kanji} romaji={primary.romaji} />
+      )}
+
+      <AdSlot slot="result" />
     </div>
   );
 }
