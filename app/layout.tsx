@@ -50,13 +50,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  ...(googleSiteVerification
-    ? {
-        verification: {
-          google: googleSiteVerification,
-        },
-      }
-    : {}),
+  verification: {
+    google:
+      googleSiteVerification ||
+      "VrlDKdQ_bzyFS01xzuLPnduf5-qt0YPtAHt_ZjL0P_0",
+  },
 };
 
 export default function RootLayout({
